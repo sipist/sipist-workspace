@@ -1,0 +1,6 @@
+**/*.db
+**/*.ipynb
+**/*.png
+**/*.sql
+**/.ipynb_checkpoints/
+app/
