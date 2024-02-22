@@ -50,9 +50,9 @@ services:
     restart: always
     volumes:
       - redis_data:/data
-    command: ["redis-server", "--appendonly", "yes"]
+    command: ["redis-server", "--appendonly", "yes", "--port", "6380"]
     ports:
-      - "6379:6379"
+      - "6380:6380"
     networks:
       - iprist-workspace-network
 
