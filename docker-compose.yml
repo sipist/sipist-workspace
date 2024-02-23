@@ -86,7 +86,7 @@ services:
       PERSISTENCE_DATA_PATH: "/var/lib/weaviate"
       ENABLE_MODULES: "text2vec-contextionary"
       DEFAULT_VECTORIZER_MODULE: "text2vec-contextionary"
-      CONTEXTIONARY_URL: contextionary:9999
+      CONTEXTIONARY_URL: contextionary:50052
     networks:
       - iprist-workspace-network
 
@@ -99,8 +99,9 @@ services:
       EXTENSIONS_STORAGE_ORIGIN: http://wv01:8080
       NEIGHBOR_OCCURRENCE_IGNORE_PERCENTILE: 5
       ENABLE_COMPOUND_SPLITTING: "false"
+      SERVER_PORT: 50052
     ports:
-      - 9999:9999
+      - 50052:50052
 
 networks:
   iprist-workspace-network:
