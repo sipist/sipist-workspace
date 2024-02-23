@@ -4,12 +4,13 @@ version: "3"
 
 volumes:
   es01_data: {}
+  wv01_data: {}
   redis_data: {}
 
 services:
   notebook:
-    image: ghcr.io/iprist/notebook:2024-02-21
     restart: always
+    image: ghcr.io/iprist/notebook:2024-02-21
     user: "jovyan:users"
     volumes:
       - ./data:/home/jovyan/data
@@ -18,11 +19,28 @@ services:
     environment:
       - JUPYTER_PORT=10001
     ports:
-      - "10001:10001"
+      - 10001:10001
+    networks:
+      - iprist-workspace-network
+
+  redis:
+    restart: always
+    image: redis:7
+    command:
+      - redis-server
+      - --port
+      - "6380"
+      - --appendonly
+      - "yes"
+    ports:
+      - 6380:6380
+    volumes:
+      - redis_data:/data
     networks:
       - iprist-workspace-network
 
   es01:
+    restart: on-failure:0
     image: docker.elastic.co/elasticsearch/elasticsearch:7.17.18
     container_name: es01
     environment:
@@ -41,20 +59,48 @@ services:
     volumes:
       - es01_data:/usr/share/elasticsearch/data
     ports:
-      - "9200:9200"
+      - 9200:9200
     networks:
       - iprist-workspace-network
 
-  redis:
-    image: redis:7
-    restart: always
-    volumes:
-      - redis_data:/data
-    command: ["redis-server", "--appendonly", "yes", "--port", "6380"]
+  wv01:
+    restart: on-failure:0
+    image: semitechnologies/weaviate:1.23.10
+    container_name: wv01
+    command:
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8080"
+      - --scheme
+      - http
     ports:
-      - "6380:6380"
+      - 8080:8080
+      - 50051:50051
+    volumes:
+      - wv01_data:/var/lib/weaviate
+    environment:
+      CLUSTER_HOSTNAME: "wv01"
+      QUERY_DEFAULTS_LIMIT: 25
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: "true"
+      PERSISTENCE_DATA_PATH: "/var/lib/weaviate"
+      ENABLE_MODULES: "text2vec-contextionary"
+      DEFAULT_VECTORIZER_MODULE: "text2vec-contextionary"
+      CONTEXTIONARY_URL: contextionary:9999
     networks:
       - iprist-workspace-network
+
+  contextionary:
+    restart: on-failure:0
+    image: semitechnologies/contextionary:en0.16.0-v1.2.1
+    environment:
+      OCCURRENCE_WEIGHT_LINEAR_FACTOR: 0.75
+      EXTENSIONS_STORAGE_MODE: weaviate
+      EXTENSIONS_STORAGE_ORIGIN: http://wv01:8080
+      NEIGHBOR_OCCURRENCE_IGNORE_PERCENTILE: 5
+      ENABLE_COMPOUND_SPLITTING: "false"
+    ports:
+      - 9999:9999
 
 networks:
   iprist-workspace-network:
