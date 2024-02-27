@@ -109,11 +109,11 @@ services:
       - --host
       - 0.0.0.0
       - --port
-      - "8080"
+      - "8880"
       - --scheme
       - http
     ports:
-      - 8080:8080
+      - 8880:8880
       - 50051:50051
     volumes:
       - wvdata01:/var/lib/weaviate
@@ -135,7 +135,7 @@ services:
     environment:
       OCCURRENCE_WEIGHT_LINEAR_FACTOR: 0.75
       EXTENSIONS_STORAGE_MODE: weaviate
-      EXTENSIONS_STORAGE_ORIGIN: http://wv01:8080
+      EXTENSIONS_STORAGE_ORIGIN: http://wv01:8880
       NEIGHBOR_OCCURRENCE_IGNORE_PERCENTILE: 5
       ENABLE_COMPOUND_SPLITTING: "false"
       SERVER_PORT: 50052
