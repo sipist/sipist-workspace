@@ -58,6 +58,7 @@ services:
 
   es01:
     container_name: es01
+    restart: on-failure:0
     depends_on:
       setup-es-cluster:
         condition: service_healthy
