@@ -6,7 +6,6 @@ volumes:
   certs: {}
   esdata01: {}
   wvdata01: {}
-  redisdata01: {}
 
 services:
   setup-es-cluster:
