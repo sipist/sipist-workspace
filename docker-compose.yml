@@ -152,26 +152,9 @@ services:
       - ./images:/home/jovyan/images
       - ./work:/home/jovyan/work
     environment:
-      - JUPYTER_PORT=10001
+      - JUPYTER_PORT=10000
     ports:
-      - 10001:10001
-    networks:
-      - iprist-workspace-network
-
-  redis01:
-    container_name: redis01
-    restart: always
-    image: redis:7
-    command:
-      - redis-server
-      - --port
-      - "6380"
-      - --appendonly
-      - "yes"
-    ports:
-      - 6380:6380
-    volumes:
-      - redisdata01:/data
+      - 10000:10000
     networks:
       - iprist-workspace-network
 
