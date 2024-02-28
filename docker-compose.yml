@@ -141,6 +141,8 @@ services:
       SERVER_PORT: 50052
     ports:
       - 50052:50052
+    networks:
+      - iprist-workspace-network
 
   notebook:
     container_name: notebook
