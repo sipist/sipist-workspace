@@ -145,7 +145,7 @@ services:
   notebook:
     container_name: notebook
     restart: unless-stopped
-    image: ghcr.io/iprist/notebook:2024-04-22
+    image: ghcr.io/iprist/notebook:2024-04-29
     user: "jovyan:users"
     volumes:
       - ./data:/home/jovyan/data
