@@ -102,7 +102,7 @@ services:
   wv01:
     container_name: wv01
     restart: unless-stopped
-    image: semitechnologies/weaviate:1.25.6
+    image: semitechnologies/weaviate:1.25.11
     command:
       - --host
       - 0.0.0.0
