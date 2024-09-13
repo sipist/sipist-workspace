@@ -8,3 +8,9 @@
 **/.ipynb_checkpoints/
 app/
 node_modules/
+
+# vespaengine
+vespa-apps/
+vespa-config/
+vespa-data/
+vespa-logs/
