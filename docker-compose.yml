@@ -3,7 +3,6 @@
 volumes:
   certs: {}
   esdata01: {}
-  wvdata01: {}
 
 services:
   notebook:
@@ -25,16 +24,20 @@ services:
   vsp01:
     container_name: vsp01
     restart: unless-stopped
-    image: vespaengine/vespa
+    image: vespaengine/vespa:8
     volumes:
       - ./vespa-config:/opt/vespa/configserver-app
       - ./vespa-apps:/opt/vespa/application
+      - ./vespa-data:/opt/vespa/var
+      - ./vespa-logs:/opt/vespa/logs
     ports:
       - 8080:8080
       - 19071:19071
     environment:
       VESPA_CONFIGSERVER_HOST: vsp01
       VESPA_CONFIGSERVER_PORT: 19071
+      VESPA_WEB_SERVICE_HOST: vsp01
+      VESPA_WEB_SERVICE_PORT: 8080
     networks:
       - iprist-workspace-network
 
