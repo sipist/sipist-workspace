@@ -28,8 +28,6 @@ services:
     volumes:
       - ./vespa-config:/opt/vespa/configserver-app
       - ./vespa-apps:/opt/vespa/application
-      - ./vespa-data:/opt/vespa/var
-      - ./vespa-logs:/opt/vespa/logs
     ports:
       - 8080:8080
       - 19071:19071
