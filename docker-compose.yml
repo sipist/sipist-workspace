@@ -1,4 +1,4 @@
-# Copyright (c) IPRist Development Team
+# Copyright (c) SIPist Development Team
 # Distributed under the terms of the Modified BSD License.
 volumes:
   certs: {}
@@ -8,7 +8,7 @@ services:
   notebook:
     container_name: notebook
     restart: unless-stopped
-    image: ghcr.io/iprist/notebook:2024-10-07
+    image: ghcr.io/sipist/notebook:2024-10-07
     user: "jovyan:users"
     volumes:
       - ./data:/home/jovyan/data
@@ -19,7 +19,7 @@ services:
     ports:
       - 10000:10000
     networks:
-      - iprist-workspace-network
+      - sipist-workspace-network
 
   vsp01:
     container_name: vsp01
@@ -37,7 +37,7 @@ services:
       VESPA_WEB_SERVICE_HOST: vsp01
       VESPA_WEB_SERVICE_PORT: 8080
     networks:
-      - iprist-workspace-network
+      - sipist-workspace-network
 
   setup-es-cluster:
     container_name: setup-es-cluster
@@ -84,7 +84,7 @@ services:
       timeout: 5s
       retries: 120
     networks:
-      - iprist-workspace-network
+      - sipist-workspace-network
 
   es01:
     container_name: es01
@@ -130,8 +130,8 @@ services:
       timeout: 10s
       retries: 120
     networks:
-      - iprist-workspace-network
+      - sipist-workspace-network
 
 networks:
-  iprist-workspace-network:
+  sipist-workspace-network:
     driver: bridge

@@ -1,4 +1,4 @@
-# iprist-workspace
+# sipist-workspace
 
 This repository provides containerized applications and microservices for the Information Processing and Retrieval Course @ Instituto Superior Técnico
 
@@ -7,7 +7,7 @@ This guide helps setting up a workspace environment for completing lab classes, 
 Services provided include:
 
 - [Elasticsearch](https://www.elastic.co/elasticsearchg) Elasticsearch is a search engine based on the Lucene library.
-- [iprist/notebook](https://github.com/iprist/notebook) Jupyter Notebook Information Retrieval Stack
+- [sipist/notebook](https://github.com/sipist/notebook) Jupyter Notebook Information Retrieval Stack
 
 ## Prerequisites
 
@@ -38,13 +38,13 @@ Install Git on
 3. Run the following command to create your local clone
 
    ```bash
-   git clone https://github.com/iprist/iprist-workspace.git
+   git clone https://github.com/sipist/sipist-workspace.git
    ```
 
    Press **Enter**
 
    ```bash
-   Cloning into 'iprist-workspace'...
+   Cloning into 'sipist-workspace'...
    remote: Enumerating objects: 297, done.
    remote: Counting objects: 100% (80/80), done.
    remote: Compressing objects: 100% (65/65), done.
@@ -56,10 +56,10 @@ Install Git on
 4. Change the current working directory to the location of the cloned directory.
 
    ```bash
-   cd iprist-workspace/
+   cd sipist-workspace/
    ```
 
-5. From the cloned directory, start up `iprist-workspace` by running
+5. From the cloned directory, start up `sipist-workspace` by running
 
    ```bash
    docker compose up
@@ -74,17 +74,17 @@ Install Git on
 
 The Jupyter Notebook service runs on the non-stardard `10001` port. Token authentication is enabled.
 
-1. You need to find your Authentication Token to login every time the `iprist-workspace` is launched (e.g., after a reboot)
+1. You need to find your Authentication Token to login every time the `sipist-workspace` is launched (e.g., after a reboot)
 
 2. Find the section of the logs towards the bottom of the Terminal window that look like this excerpt:
 
    ```log
-   iprist-workspace-notebook-1  |     Or copy and paste one of these URLs:
-   iprist-workspace-notebook-1  |         http://7fd8c38e99bd:10001/lab?token=f83ee982668ebe66bee2dbeb5875d14131a1d118d1e0fa12
-   iprist-workspace-notebook-1  |         http://127.0.0.1:10001/lab?token=f83ee982668ebe66bee2dbeb5875d14131a1d118d1e0fa12
+   sipist-workspace-notebook-1  |     Or copy and paste one of these URLs:
+   sipist-workspace-notebook-1  |         http://7fd8c38e99bd:10001/lab?token=f83ee982668ebe66bee2dbeb5875d14131a1d118d1e0fa12
+   sipist-workspace-notebook-1  |         http://127.0.0.1:10001/lab?token=f83ee982668ebe66bee2dbeb5875d14131a1d118d1e0fa12
    ```
 
-   _Note:_ You can also view the logs for the `iprist-workspace-notebook-1` in the Containers tab in the Docker Desktop application.
+   _Note:_ You can also view the logs for the `sipist-workspace-notebook-1` in the Containers tab in the Docker Desktop application.
 
 3. Follow the link printed last with host `127.0.0.1`. The authentication token is embedded in the URL.
 
@@ -98,7 +98,7 @@ The Jupyter Notebook service runs on the non-stardard `10001` port. Token authen
    git pull
    ```
 
-   This updates `iprist-workspace` to the latest version.
+   This updates `sipist-workspace` to the latest version.
 
 2. Secondly, from the project directory run
 
@@ -114,7 +114,7 @@ The Jupyter Notebook service runs on the non-stardard `10001` port. Token authen
    docker compose up --build --force-recreate --remove-orphans
    ```
 
-   This starts up the `iprist-workspace` and cleans up unused images.
+   This starts up the `sipist-workspace` and cleans up unused images.
 
 ### I get Permission Errors and/or the notebook Save Button is disabled
 
@@ -148,7 +148,7 @@ If this still does not solve the issue with permissions then follow this recipe:
 
 ## Issues
 
-Please use GitHub Issues to report any issues you might have with `iprist-workspace`.
+Please use GitHub Issues to report any issues you might have with `sipist-workspace`.
 
 ## Credits
 

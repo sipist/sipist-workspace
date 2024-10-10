@@ -4,7 +4,7 @@ This project is licensed under the terms of the Modified BSD License
 (also known as New or Revised or 3-Clause BSD), as follows:
 
 - Copyright (c) 2023, Flavio Martins <flavio.f.martins@tecnico.ulisboa.pt>
-- Copyright (c) 2023-, IPRist Development Team
+- Copyright (c) 2023-, SIPist Development Team
 
 All rights reserved.
 
@@ -18,7 +18,7 @@ Redistributions in binary form must reproduce the above copyright notice, this
 list of conditions and the following disclaimer in the documentation and/or
 other materials provided with the distribution.
 
-Neither the name of the IPRist Development Team nor the names of its
+Neither the name of the SIPist Development Team nor the names of its
 contributors may be used to endorse or promote products derived from this
 software without specific prior written permission.
 
@@ -33,28 +33,28 @@ CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-## About the IPRist Development Team
+## About the SIPist Development Team
 
-The IPRist is the set of all contributors to the IPRist project.
-This includes all of the IPRist subprojects.
+The SIPist is the set of all contributors to the SIPist project.
+This includes all of the SIPist subprojects.
 
 The core team that coordinates development on GitHub can be found here:
-<https://github.com/iprist/>.
+<https://github.com/sipist/>.
 
 ## Our Copyright Policy
 
-IPRist uses a shared copyright model. Each contributor maintains copyright
-over their contributions to IPRist. But, it is important to note that these
-contributions are typically only changes to the repositories. Thus, the IPRist
+SIPist uses a shared copyright model. Each contributor maintains copyright
+over their contributions to SIPist. But, it is important to note that these
+contributions are typically only changes to the repositories. Thus, the SIPist
 source code, in its entirety is not the copyright of any single person or
-institution. Instead, it is the collective copyright of the entire IPRist
+institution. Instead, it is the collective copyright of the entire SIPist
 Development Team. If individual contributors want to maintain a record of what
 changes/contributions they have specific copyright on, they should indicate
 their copyright in the commit message of the change, when they commit the
-change to one of the IPRist repositories.
+change to one of the SIPist repositories.
 
 With this in mind, the following banner should be used in any source code file
 to indicate the copyright and license terms:
 
-    # Copyright (c) IPRist Development Team
+    # Copyright (c) SIPist Development Team
     # Distributed under the terms of the Modified BSD License.
