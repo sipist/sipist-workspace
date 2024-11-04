@@ -5,7 +5,6 @@ services:
     container_name: notebook
     restart: unless-stopped
     image: ghcr.io/sipist/notebook:2024-11-04
-    user: "jovyan:users"
     volumes:
       - ./data:/home/jovyan/data
       - ./images:/home/jovyan/images
