@@ -8,7 +8,7 @@ services:
   notebook:
     container_name: notebook
     restart: unless-stopped
-    image: ghcr.io/sipist/notebook:2024-10-23
+    image: ghcr.io/sipist/notebook:2024-11-04
     user: "jovyan:users"
     volumes:
       - ./data:/home/jovyan/data
