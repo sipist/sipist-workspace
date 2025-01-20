@@ -1,0 +1,40 @@
+# Copyright (c) SIPist Development Team
+# Distributed under the terms of the Modified BSD License.
+services:
+  notebook:
+    container_name: notebook
+    restart: unless-stopped
+    image: ghcr.io/sipist/notebook:edge
+    volumes:
+      - ./work:/home/jovyan/work
+      - ../ir-labs/data:/home/jovyan/data
+      - ../ir-labs/labs:/home/jovyan/labs
+      - ../ir-labs/project:/home/jovyan/project
+    environment:
+      - JUPYTER_PORT=10000
+    ports:
+      - 10000:10000
+    networks:
+      - sipist-workspace-network
+
+  vsp01:
+    container_name: vsp01
+    restart: unless-stopped
+    image: vespaengine/vespa:8
+    volumes:
+      - ./vespa-config:/opt/vespa/configserver-app
+      - ./vespa-apps:/opt/vespa/application
+    ports:
+      - 8080:8080
+      - 19071:19071
+    environment:
+      VESPA_CONFIGSERVER_HOST: vsp01
+      VESPA_CONFIGSERVER_PORT: 19071
+      VESPA_WEB_SERVICE_HOST: vsp01
+      VESPA_WEB_SERVICE_PORT: 8080
+    networks:
+      - sipist-workspace-network
+
+networks:
+  sipist-workspace-network:
+    driver: bridge
