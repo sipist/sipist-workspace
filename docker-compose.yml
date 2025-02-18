@@ -4,7 +4,7 @@ services:
   notebook:
     container_name: notebook
     restart: unless-stopped
-    image: ghcr.io/sipist/notebook:2025-01-20
+    image: ghcr.io/sipist/notebook:2025-02-18
     volumes:
       - ./data:/home/jovyan/data
       - ./images:/home/jovyan/images
@@ -13,24 +13,6 @@ services:
       - JUPYTER_PORT=10000
     ports:
       - 10000:10000
-    networks:
-      - sipist-workspace-network
-
-  vsp01:
-    container_name: vsp01
-    restart: unless-stopped
-    image: vespaengine/vespa:8
-    volumes:
-      - ./vespa-config:/opt/vespa/configserver-app
-      - ./vespa-apps:/opt/vespa/application
-    ports:
-      - 8080:8080
-      - 19071:19071
-    environment:
-      VESPA_CONFIGSERVER_HOST: vsp01
-      VESPA_CONFIGSERVER_PORT: 19071
-      VESPA_WEB_SERVICE_HOST: vsp01
-      VESPA_WEB_SERVICE_PORT: 8080
     networks:
       - sipist-workspace-network
 
