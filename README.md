@@ -6,7 +6,6 @@ This guide helps setting up a workspace environment for completing lab classes, 
 
 Services provided include:
 
-- [Elasticsearch](https://www.elastic.co/elasticsearchg) Elasticsearch is a search engine based on the Lucene library.
 - [sipist/notebook](https://github.com/sipist/notebook) Jupyter Notebook Intelligent Retrieval Systems Stack
 
 ## Prerequisites
