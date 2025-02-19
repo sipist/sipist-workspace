@@ -17,24 +17,6 @@ services:
     networks:
       - sipist-workspace-network
 
-  vsp01:
-    container_name: vsp01
-    restart: unless-stopped
-    image: vespaengine/vespa:8
-    volumes:
-      - ./vespa-config:/opt/vespa/configserver-app
-      - ./vespa-apps:/opt/vespa/application
-    ports:
-      - 8080:8080
-      - 19071:19071
-    environment:
-      VESPA_CONFIGSERVER_HOST: vsp01
-      VESPA_CONFIGSERVER_PORT: 19071
-      VESPA_WEB_SERVICE_HOST: vsp01
-      VESPA_WEB_SERVICE_PORT: 8080
-    networks:
-      - sipist-workspace-network
-
 networks:
   sipist-workspace-network:
     driver: bridge
