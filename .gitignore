@@ -6,6 +6,7 @@
 **/*.png
 **/*.sql
 **/.ipynb_checkpoints/
+.ir_datasets/
 app/
 node_modules/
 
