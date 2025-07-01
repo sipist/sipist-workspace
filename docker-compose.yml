@@ -4,11 +4,12 @@ services:
   notebook:
     container_name: notebook
     restart: unless-stopped
-    image: ghcr.io/sipist/notebook:2025-06-02
+    image: ghcr.io/sipist/notebook:2025-06-30
     volumes:
+      - ./.ir-datasets:/home/jovyan/.ir-datasets
+      - ./work:/home/jovyan/work
       - ./data:/home/jovyan/data
       - ./images:/home/jovyan/images
-      - ./work:/home/jovyan/work
     environment:
       - JUPYTER_PORT=10000
     ports:
