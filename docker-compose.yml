@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     image: ghcr.io/sipist/notebook:2025-06-30
     volumes:
-      - ./.ir-datasets:/home/jovyan/.ir-datasets
+      - ./.ir_datasets:/home/jovyan/.ir_datasets
       - ./work:/home/jovyan/work
       - ./data:/home/jovyan/data
       - ./images:/home/jovyan/images

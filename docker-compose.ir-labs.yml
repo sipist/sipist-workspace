@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     image: ghcr.io/sipist/notebook:edge
     volumes:
-      - ./.ir-datasets:/home/jovyan/.ir-datasets
+      - ./.ir_datasets:/home/jovyan/.ir_datasets
       - ./work:/home/jovyan/work
       - ../ir-labs/data:/home/jovyan/data
       - ../ir-labs/labs:/home/jovyan/labs
