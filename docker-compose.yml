@@ -4,7 +4,7 @@ services:
   notebook:
     container_name: notebook
     restart: unless-stopped
-    image: ghcr.io/sipist/notebook:2025-10-06
+    image: ghcr.io/sipist/notebook:2025-10-21
     volumes:
       - ./.ir_datasets:/home/jovyan/.ir_datasets
       - ./work:/home/jovyan/work
