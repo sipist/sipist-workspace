@@ -3,7 +3,7 @@
 services:
   dns-cache:
     restart: unless-stopped
-    image: dhi.io/coredns:latest
+    image: coredns/coredns:latest
     volumes:
       - ./coredns/Corefile:/etc/coredns/Corefile:ro
     networks:
