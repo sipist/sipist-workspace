@@ -4,6 +4,13 @@ services:
   dns-cache:
     restart: unless-stopped
     image: coredns/coredns:latest
+    command:
+      - -conf
+      - /etc/coredns/Corefile
+    dns:
+      - 1.1.1.1
+      - 8.8.8.8
+      - 9.9.9.9
     volumes:
       - ./coredns/Corefile:/etc/coredns/Corefile:ro
     networks:
