@@ -1,5 +1,6 @@
 .:53 {
     errors
+    prometheus :9153
     cache {
         success 10000 300
         denial 1000 30

@@ -13,6 +13,8 @@ services:
       - 9.9.9.9
     volumes:
       - ./coredns/Corefile:/etc/coredns/Corefile:ro
+    expose:
+      - "9153"
     networks:
       sipist-workspace-network:
         ipv4_address: 172.28.0.53
