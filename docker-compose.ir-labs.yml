@@ -22,7 +22,7 @@ services:
   notebook:
     container_name: notebook
     restart: unless-stopped
-    image: ghcr.io/sipist/notebook:edge
+    image: quay.io/sipist/notebook:edge
     depends_on:
       - dns-cache
     volumes:
